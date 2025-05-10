@@ -17,15 +17,20 @@ $('document').ready(function(){
 		});
 
 	$('#turn_on').click(function(){
-		$('#bulb_yellow').addClass('bulb-glow-yellow');
-		$('#bulb_red').addClass('bulb-glow-red');
-		$('#bulb_blue').addClass('bulb-glow-blue');
-		$('#bulb_green').addClass('bulb-glow-green');
-		$('#bulb_pink').addClass('bulb-glow-pink');
-		$('#bulb_orange').addClass('bulb-glow-orange');
-		$('body').addClass('peach');
-		$(this).fadeOut('slow').delay(5000).promise().done(function(){
-			$('#play').fadeIn('slow');
+                // Light up bulbs (existing code)
+                $('#bulb_yellow').addClass('bulb-glow-yellow');
+                $('#bulb_red').addClass('bulb-glow-red');
+                // ... (other bulbs)
+
+                // Remove peach background class (if needed)
+                $('body').removeClass('peach');
+
+                // Add the semi-transparent background
+                $('body').addClass('bg-image-active'); // Optional class for control
+                // (OR use the pseudo-element directly via CSS as above)
+
+                $(this).fadeOut('slow').delay(5000).promise().done(function(){
+                    $('#play').fadeIn('slow');
 		});
 	});
 	$('#play').click(function(){
