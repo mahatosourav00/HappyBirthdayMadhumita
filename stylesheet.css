@@ -1,29 +1,15 @@
-/* Replace or modify the existing body styles */
 body {
-    position: relative; /* Required for pseudo-element positioning */
-    background-color: #000; /* Fallback if image fails */
-    overflow-x: hidden;
+	/*background-color: #FFDAB9;	*/
+	background-color: #000;
+	-webkit-transition:background-color linear 5s;
+	-moz-transition:background-color linear 5s;
+	-o-transition:background-color linear 5s;
+	-ms-transition:background-color linear 5s;
+	transition:background-color linear 5s;
+	overflow-x:hidden;
 }
-
-body::after {
-    content: "";
-    background-image: url('bd1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    opacity: 0.4; /* 40% opacity */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Places it behind content */
-}
-
-/* Ensure other elements stay above the background */
-.container, .balloons, .cake, .message {
-    position: relative;
-    z-index: 1;
+.container {
+	display: none;
 }
 .peach {
 	background-color: #FFDAB9;
